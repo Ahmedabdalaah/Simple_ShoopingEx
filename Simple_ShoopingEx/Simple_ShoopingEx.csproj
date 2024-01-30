@@ -48,6 +48,7 @@
     <Compile Include="IClient_Operation.cs" />
     <Compile Include="IProductOperations.cs" />
     <Compile Include="ISaleOperations.cs" />
+    <Compile Include="ISalesReports.cs" />
     <Compile Include="ITypeOperations.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductOperations.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sales.cs" />
     <Compile Include="SalesOperations.cs" />
+    <Compile Include="SalesReports.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="TypeOperations.cs" />
   </ItemGroup>

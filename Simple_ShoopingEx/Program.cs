@@ -56,7 +56,9 @@ namespace Simple_ShoopingEx
             //sale = salesOp.GetSales();
             //Console.WriteLine(sale.sale_date);
             // salesOp.Update_Sale(2, DateTime.Now);
-            */  
+            */
+            SalesReports salesRepo = new SalesReports();
+            salesRepo.SalesPerDay();
             Console.ReadKey();
 
         }
