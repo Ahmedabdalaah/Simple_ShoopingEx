@@ -43,7 +43,7 @@ namespace Simple_ShoopingEx
             }
             catch(Exception ex)
             {
-                Console.WriteLine($"Error Occured : {ex.Message}");
+                Console.WriteLine($" Error Occured : {ex.Message}");
             }
 
            
