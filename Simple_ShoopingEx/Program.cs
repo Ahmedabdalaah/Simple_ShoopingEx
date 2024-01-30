@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -57,9 +58,42 @@ namespace Simple_ShoopingEx
             //Console.WriteLine(sale.sale_date);
             // salesOp.Update_Sale(2, DateTime.Now);
             */
-            SalesReports salesRepo = new SalesReports();
-            salesRepo.SalesPerDay();
-            Console.ReadKey();
+            /////// Excute Procedure //////////////////
+            ///SalesReports salesRepo = new SalesReports();
+            ///salesRepo.SalesPerDay();
+            ///////////////////////////// Excute Procedure/////////////////////
+            ///
+            string source = "server=DESKTOP-C4UVIUM\\SQLEXPRESS ;integrated security=SSPI;database=shopping";
+            SqlConnection connection;
+                try
+                {
+                    connection = new SqlConnection(source);
+                    connection.Open();
+                    Console.WriteLine("Connected");
+                SqlCommand command = new SqlCommand("GetPhone", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                SqlParameter parameter = new SqlParameter
+                {
+                    ParameterName = "@Id",
+                    SqlDbType= SqlDbType.Int,
+                    Value = 6,
+                    Direction = ParameterDirection.Input
+                };
+                command.Parameters.Add(parameter);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Console.WriteLine("Client Phone is : " + reader[0]);
+                }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                Console.ReadKey();
+
 
         }
     }
