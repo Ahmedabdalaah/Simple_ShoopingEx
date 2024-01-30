@@ -38,7 +38,7 @@ namespace Simple_ShoopingEx
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Console.WriteLine("DateTime :" + reader[0] + " Amount : " + reader[1]);
+                    Console.WriteLine("DateTime : " + reader[0] + " Amount : " + reader[1]);
                 }
             }
             catch(Exception ex)
